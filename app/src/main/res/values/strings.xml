@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Priscilla</string>
+
+    <string name="action_about">about</string>
 </resources>
