@@ -6,3 +6,5 @@ package com.jascal.priscilla.domain
  * describe
  */
 data class Cover(val coverUrl: String, val title: String, val link: String)
+
+data class Comic(val comicUrl: String)

@@ -3,8 +3,10 @@
 
     <string name="action_about">about</string>
 
-
     <string name="tab_one">online</string>
     <string name="tab_two">comic</string>
     <string name="tab_three">news</string>
+
+    <string name="network_error">network error!</string>
+
 </resources>

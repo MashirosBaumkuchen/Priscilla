@@ -1,5 +1,6 @@
 package com.jascal.priscilla.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
@@ -12,6 +13,7 @@ import com.jascal.priscilla.domain.bean.CoverSource
 import com.jascal.priscilla.kits.recycler.AnotherAdapter
 import com.jascal.priscilla.R
 import com.jascal.priscilla.domain.Cover
+import com.jascal.priscilla.ui.activity.ComicActivity
 import com.jascal.priscilla.ui.binder.CoverBinder
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.jetbrains.anko.doAsync
@@ -69,7 +71,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun jump2Comic(cover: Cover) {
-
+        val intent = Intent(context, ComicActivity().javaClass)
+        intent.putExtra(ComicActivity.INTENT_COMIC_URL, cover.link)
+        startActivity(intent)
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
