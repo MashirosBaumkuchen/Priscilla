@@ -71,9 +71,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun jump2Comic(cover: Cover) {
-        val intent = Intent(context, ComicActivity().javaClass)
-        intent.putExtra(ComicActivity.INTENT_COMIC_URL, cover.link)
-        startActivity(intent)
+        
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
