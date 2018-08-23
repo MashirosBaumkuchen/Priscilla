@@ -7,7 +7,6 @@ import okhttp3.OkHttpClient
  * @time 2018/8/21
  * describe
  */
-
 object OkClient {
     val instance = OkHttpClient()
 }
