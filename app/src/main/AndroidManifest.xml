@@ -22,6 +22,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.activity.ChapterActivity"
+            android:theme="@style/AppTheme.AppBarOverlay">
+        </activity>
+        <activity
             android:name=".ui.activity.ComicActivity"
             android:theme="@style/AppTheme.Full">
         </activity>

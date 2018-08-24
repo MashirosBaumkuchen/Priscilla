@@ -71,7 +71,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun jump2Comic(cover: Cover) {
-        
+
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {

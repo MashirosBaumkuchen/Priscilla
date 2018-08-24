@@ -2,11 +2,13 @@
     <string name="app_name">Priscilla</string>
 
     <string name="action_about">about</string>
+    <string name="action_info">info</string>
 
     <string name="tab_one">online</string>
     <string name="tab_two">comic</string>
     <string name="tab_three">news</string>
 
     <string name="network_error">network error!</string>
+    <string name="page_load_error">page load error!</string>
 
 </resources>
