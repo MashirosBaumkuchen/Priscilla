@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".ui.activity.ChapterActivity"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".ui.activity.ComicActivity"
