@@ -18,17 +18,17 @@ class ChapterSource : Source<Chapter> {
         val doc = Jsoup.parse(html)
 
         val pages = ArrayList<Page>()
-        val elements = doc.select("div.volumeControl").select("a")
+        val elements = doc.select("ul.cf").select("li")
 
         for (element in elements) {
-            val title = element.text()
-            val link = "http://ishuhui.net/" + element.attr("href")
+            val title = element.select("a").text()
+            val link = element.select("a").attr("href")
             val page = Page(title, link)
             pages.add(page)
         }
 
-        val updateTime = doc.select("div.mangaInfoDate").text()
-        val detail = doc.select("div.mangaInfoTextare").text()
+        val updateTime = doc.select("div.fl").select("span").text()
+        val detail = doc.select("p.words").text()
         val info = Info(updateTime, detail)
 
         return Chapter(pages, info)

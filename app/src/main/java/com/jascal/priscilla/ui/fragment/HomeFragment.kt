@@ -9,10 +9,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jascal.priscilla.domain.bean.CoverSource
-import com.jascal.priscilla.kits.recycler.AnotherAdapter
 import com.jascal.priscilla.R
 import com.jascal.priscilla.domain.Cover
+import com.jascal.priscilla.domain.bean.CoverSource
+import com.jascal.priscilla.kits.recycler.AnotherAdapter
+import com.jascal.priscilla.ui.activity.ChapterActivity
 import com.jascal.priscilla.ui.activity.ComicActivity
 import com.jascal.priscilla.ui.binder.CoverBinder
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -58,9 +59,8 @@ class HomeFragment : Fragment() {
         coverList.layoutManager = GridLayoutManager(context, 2)
 
         adapter = AnotherAdapter()
-                .with(Cover::class.java, CoverBinder().clickWith {
-                    item, _ ->
-                    jump2Comic(item)
+                .with(Cover::class.java, CoverBinder().clickWith { item, _ ->
+                    jump2Chapter(item)
                 })
         coverList.adapter = adapter
 
@@ -70,8 +70,12 @@ class HomeFragment : Fragment() {
         homeRefresh.post { homeRefresh.isRefreshing = true }
     }
 
-    private fun jump2Comic(cover: Cover) {
-
+    private fun jump2Chapter(cover: Cover) {
+        val intent = Intent(context, ChapterActivity().javaClass)
+        intent.putExtra("cover", cover.coverUrl)
+        intent.putExtra("title", cover.title)
+        intent.putExtra("link", cover.link)
+        startActivity(intent)
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
