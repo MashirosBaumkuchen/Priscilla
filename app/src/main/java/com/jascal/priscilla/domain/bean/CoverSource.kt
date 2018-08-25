@@ -18,8 +18,6 @@ class CoverSource : Source<ArrayList<Cover>> {
         val html = getHtml(url)
         val doc = Jsoup.parse(html)
 
-        Log.d("u17", doc.toString())
-
         val elements = doc.select("ul.comic_all").select("li")
         for (element in elements) {
             val coverUrl = element.select("img").attr("xsrc")
@@ -28,8 +26,6 @@ class CoverSource : Source<ArrayList<Cover>> {
             val cover = Cover(coverUrl, title, link)
             list.add(cover)
         }
-
-        Log.d("u17", list.toString())
 
         return list
     }
