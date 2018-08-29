@@ -1,6 +1,5 @@
 package com.jascal.priscilla.domain.bean
 
-import android.util.Log
 import com.jascal.priscilla.domain.Cover
 import com.jascal.priscilla.getHtml
 import org.jsoup.Jsoup
