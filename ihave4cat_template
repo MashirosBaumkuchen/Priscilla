@@ -2,5 +2,5 @@ title:
 
 module: app
 
-on branch: master
+branch: master
 
